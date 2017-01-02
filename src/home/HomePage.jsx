@@ -37,18 +37,18 @@ const HomePage = () => (
     <div style={styles.root}>
         <img style={styles.image} src='/images/me.jpg' />
         <div style={styles.rightPane}>
-            <span style={styles.hi}>Hi!</span>
-            <span>My name is <span style={styles.name}>Suhair</span>.</span>
+            <span style={styles.hi}>Hi there!</span>
+            <span>I’m <span style={styles.name}>Suhair</span>,</span>
             <span>
-                I’m a coder who fell in love with the component based functional UI of&nbsp;
+                a coder who fell in love with the component based functional UI of&nbsp;
                 <Tech>React</Tech> and <Tech>Inferno</Tech>
                 &nbsp;and uses tools like <Tech>Redux</Tech> and <Tech>Rollup</Tech>
-                &nbsp;to make it easier.
+                &nbsp;to make it even better.
                 &nbsp;I also create native applications for <Tech>Android</Tech> using <Tech>Java</Tech> and
-                &nbsp;<Tech>React Native</Tech>, for <Tech>BlackBerry10</Tech> using <Tech>C++</Tech>.
-                &nbsp;Apart from that, I’ve also got my hands dirty with <Tech>Haskell</Tech>
+                &nbsp;<Tech>React Native</Tech>, and for <Tech>BlackBerry10</Tech> using <Tech>C++</Tech>.
+                &nbsp;Apart from that, I’ve also gotten my hands dirty with <Tech>Haskell</Tech>
                 &nbsp;just because I love functional programming and <Tech>Swift</Tech>
-                &nbsp;because it was fun, along with a couple of <Tech>others</Tech>.
+                &nbsp;because it was fun, along with a couple of <Tech>other stuff</Tech>.
             </span>
         </div>
     </div>
