@@ -1,7 +1,6 @@
 const fs = require('fs');
 
 const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const PROD = JSON.parse(process.env.PROD_ENV || '0');
@@ -17,8 +16,7 @@ const plugins = [
         links: links,
         template: 'index-file-template.ejs',
         title: "Title"
-    }),
-    new ExtractTextPlugin('styles.css')
+    })
 ];
 
 const outputDir = 'dist';
@@ -61,9 +59,6 @@ module.exports = {
             test: /\.jsx?$/,
             loader: 'babel-loader',
             exclude: /node_modules/
-        }, {
-            test: /(\.scss|\.css)$/,
-            loader: ExtractTextPlugin.extract('style', 'css?sourceMap&modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss!sass')
         }]
     },
     plugins: plugins
