@@ -1,14 +1,15 @@
 import React, { Component } from 'react'
 
 import {
-    COLOR_BG,
+    COLOR_BG_START,
+    COLOR_BG_END,
     COLOR_TEXT
 } from './utils/colors.js'
 
 const styles = {
     root: {
         alignItems: 'center',
-        backgroundColor: COLOR_BG,
+        background: `linear-gradient(to bottom right, ${COLOR_BG_START}, ${COLOR_BG_END})`,
         display: 'flex',
         flexDirection: 'column',
         height: '100%',
