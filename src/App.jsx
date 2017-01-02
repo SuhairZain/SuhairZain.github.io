@@ -6,6 +6,8 @@ import {
     COLOR_TEXT
 } from './utils/colors.js'
 
+import HomePage from './home/HomePage.jsx'
+
 const styles = {
     root: {
         alignItems: 'center',
@@ -23,7 +25,7 @@ const styles = {
 
 const App = () => (
     <div style={styles.root}>
-        <span style={styles.title}>Hello React!</span>
+        <HomePage />
     </div>
 );
 
