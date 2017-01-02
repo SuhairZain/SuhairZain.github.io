@@ -1514,7 +1514,13 @@ indexof@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/indexof/-/indexof-0.0.1.tgz#82dc336d232b9062179d05ab3293a66059fd435d"
 
-inferno@^1.0.3:
+inferno-component@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/inferno-component/-/inferno-component-1.0.3.tgz#228b625e611cf900d5a944cb37407cc52fa4ac9a"
+  dependencies:
+    inferno "1.0.3"
+
+inferno@1.0.3, inferno@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/inferno/-/inferno-1.0.3.tgz#aec65892105e743c1a6a6c87a6c54db686728d9d"
 
