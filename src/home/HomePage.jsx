@@ -1,20 +1,12 @@
 import Inferno from 'inferno'
 
-import {
-    COLOR_SHADOW
-} from '../utils/colors'
-
 import Tech from './Tech.jsx'
 
 const styles = {
     root: {
-        backgroundColor: 'white',
-        borderRadius: 4,
-        boxShadow: `0px 0px 4px ${COLOR_SHADOW}`,
         display: 'flex',
-        height: '75%',
-        overflow: 'hidden',
-        width: '80%'
+        height: 'calc(100% - 48px)',
+        width: '100%'
     },
     image: {
         height: '100%',
