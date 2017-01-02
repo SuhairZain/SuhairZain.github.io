@@ -40,7 +40,7 @@ const HomePage = () => (
             <span style={styles.hi}>Hi there!</span>
             <span>I’m <span style={styles.name}>Suhair</span>,</span>
             <span>
-                a coder who fell in love with the component based functional UI of&nbsp;
+                a coder who fell in love with the component based declarative UI of&nbsp;
                 <Tech>React</Tech> and <Tech>Inferno</Tech>
                 &nbsp;and uses tools like <Tech>Redux</Tech> and <Tech>Rollup</Tech>
                 &nbsp;to make it even better.
