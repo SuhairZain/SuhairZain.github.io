@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import Inferno from 'inferno'
 
 import {
     COLOR_BG_START,

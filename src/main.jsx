@@ -1,9 +1,8 @@
-import React from 'react'
-import { render } from 'react-dom'
+import Inferno from 'inferno'
 
 import App from './App.jsx'
 
-render(
-    <App></App>,
+Inferno.render(
+    <App />,
     document.getElementById('root')
 );
