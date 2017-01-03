@@ -8,3 +8,11 @@ export const COLOR_TEXT_IMPORTANT = '#f44336';
 export const COLOR_TEXT_SUB = '#ff1744';
 
 export const COLOR_SHADOW = 'rgba(0, 0, 0, 0.9)';
+
+const hexColorPartLength = 2;
+export const hexColorToDec = (hex, array = []) => (
+    hex.length === 0 ? array : hexColorToDec(hex.substr(hexColorPartLength), [
+        ...array,
+        parseInt(hex.substr(0, hexColorPartLength), 16)
+    ])
+);
