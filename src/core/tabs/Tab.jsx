@@ -1,5 +1,10 @@
 import Inferno from 'inferno'
 
+import {
+    COLOR_TEXT,
+    convertHexColorToDex
+} from '../../utils/colors'
+
 const styles = {
     root: {
         alignItems: 'center',
@@ -11,9 +16,15 @@ const styles = {
     }
 };
 
+const getTabTextColor = (isSelected) => (
+    isSelected ? COLOR_TEXT : `rgba(${[...convertHexColorToDex(COLOR_TEXT), 0.7].join(',')})`
+);
+
 const Tab = ({ children, isSelected }) => (
     <div style={styles.root}>
-        <span style={{ marginTop: 1 }}>{children}</span>
+        <span style={{ marginTop: 1, color: getTabTextColor(isSelected) }}>
+            {children}
+        </span>
     </div>
 );
 

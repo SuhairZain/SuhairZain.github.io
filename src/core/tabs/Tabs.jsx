@@ -1,15 +1,13 @@
-import Inferno from 'inferno'
+import Inferno, { cloneVNode } from 'inferno'
 
 import {
     COLOR_TABS,
-    COLOR_TEXT,
     COLOR_TEXT_IMPORTANT
 } from '../../utils/colors'
 
 const styles = {
     root: {
         backgroundColor: COLOR_TABS,
-        color: COLOR_TEXT,
         display: 'flex',
         flexDirection: 'column'
     },
@@ -23,12 +21,32 @@ const styles = {
     }
 };
 
-const Tabs = ({ children }) => (
+const getIndicatorStyle = (length, selectedIndex) => {
+    const width = 100 / length;
+
+    return {
+        ...styles.indicator,
+        transform: `translate(${selectedIndex * 100}%)`,
+        width: `${width}%`
+    };
+};
+
+const Tabs = ({ children, selectedIndex = 0 }) => (
     <div style={styles.root}>
         <div style={styles.tabs}>
-            {children}
+            {
+                children.map((child, i) => (
+                    cloneVNode(
+                        child,
+                        {
+                            ...child.props,
+                            isSelected: selectedIndex === i
+                        }
+                    )
+                ))
+            }
         </div>
-        <div style={{ ...styles.indicator, width: `${100 / children.length}%` }}></div>
+        <div style={getIndicatorStyle(children.length, selectedIndex)}></div>
     </div>
 );
 
