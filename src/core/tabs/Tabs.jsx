@@ -1,5 +1,7 @@
 import Inferno, { cloneVNode } from 'inferno'
 
+import { Motion, spring } from 'inferno-motion'
+
 import {
     COLOR_TABS,
     COLOR_TEXT_IMPORTANT
@@ -21,11 +23,13 @@ const styles = {
     }
 };
 
-const getIndicatorStyle = (length, selectedIndex) => ({
+const getIndicatorStyle = (length, translation) => ({
     ...styles.indicator,
-    transform: `translate(${selectedIndex * 100}%)`,
+    transform: `translate(${translation}%)`,
     width: `${100 / length}%`
 });
+
+const getTranslation = (selectedIndex) => selectedIndex * 100;
 
 const Tabs = ({ children, selectedIndex = 0 }) => (
     <div style={styles.root}>
@@ -42,7 +46,13 @@ const Tabs = ({ children, selectedIndex = 0 }) => (
                 ))
             }
         </div>
-        <div style={getIndicatorStyle(children.length, selectedIndex)}></div>
+        <Motion defaultStyle={{ x: 0 }} style={{ x: spring(getTranslation(selectedIndex)) }}>
+            {
+                ({x}) => (
+                    <div style={getIndicatorStyle(children.length, x)}></div>
+                )
+            }
+        </Motion>
     </div>
 );
 
