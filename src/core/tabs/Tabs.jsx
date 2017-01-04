@@ -1,5 +1,4 @@
 import Inferno, { cloneVNode } from 'inferno'
-
 import { Motion, spring } from 'inferno-motion'
 
 import {
@@ -31,7 +30,7 @@ const getIndicatorStyle = (length, translation) => ({
 
 const getTranslation = (selectedIndex) => selectedIndex * 100;
 
-const Tabs = ({ children, selectedIndex = 0 }) => (
+const Tabs = ({ children, selectedIndex = 0, onSelect }) => (
     <div style={styles.root}>
         <div style={styles.tabs}>
             {
@@ -40,7 +39,8 @@ const Tabs = ({ children, selectedIndex = 0 }) => (
                         child,
                         {
                             ...child.props,
-                            isSelected: selectedIndex === i
+                            isSelected: selectedIndex === i,
+                            onSelect
                         }
                     )
                 ))

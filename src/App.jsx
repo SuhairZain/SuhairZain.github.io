@@ -1,4 +1,9 @@
 import Inferno from 'inferno'
+import { connect } from 'inferno-redux'
+
+import {
+    createSelectTab
+} from './store/ui-state'
 
 import {
     COLOR_BG_START,
@@ -35,17 +40,33 @@ const styles = {
     }
 };
 
-const App = () => (
+const App = ({tabs, selectedIndex, onSelect}) => (
     <div style={styles.root}>
         <div style={styles.content}>
-            <Tabs>
-                <Tab>Home</Tab>
-                <Tab>Projects</Tab>
-                <Tab>Contact</Tab>
+            <Tabs selectedIndex={selectedIndex} onSelect={onSelect}>
+                {
+                    tabs.map(({_id, title}) => (
+                        <Tab key={_id} id={_id} title={title}>{title}</Tab>
+                    ))
+                }
             </Tabs>
             <HomePage />
         </div>
     </div>
 );
 
-export default App;
+const mapStateToProps = ({uiState}) => ({
+    tabs: uiState.tabs,
+    selectedIndex: uiState.tabs.map(tab => tab._id).indexOf(uiState.selectedTab)
+});
+
+const mapDispatchToProps = (dispatch) => ({
+    onSelect: (id) => {
+        dispatch(createSelectTab(id));
+    }
+});
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(App);
