@@ -16,16 +16,18 @@ const styles = {
     }
 };
 
-const getTabTextColor = (isSelected) => (
-    isSelected ? COLOR_TEXT : `rgba(${[...convertHexColorToDex(COLOR_TEXT), 0.7].join(',')})`
-);
+const getTabStyle = (isSelected) => ({
+    color: isSelected ? COLOR_TEXT : `rgba(${[...convertHexColorToDex(COLOR_TEXT), 0.7].join(',')})`,
+    fontWeight: isSelected ? 'bold' : 'normal',
+    marginTop: 1,
+});
 
 const Tab = ({ children, isSelected }) => (
     <div style={styles.root}>
-        <span style={{ marginTop: 1, color: getTabTextColor(isSelected) }}>
+        <span style={getTabStyle(isSelected)}>
             {children}
         </span>
-    </div>
+    </div >
 );
 
 export default Tab;

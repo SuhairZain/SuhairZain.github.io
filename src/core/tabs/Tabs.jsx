@@ -21,15 +21,11 @@ const styles = {
     }
 };
 
-const getIndicatorStyle = (length, selectedIndex) => {
-    const width = 100 / length;
-
-    return {
-        ...styles.indicator,
-        transform: `translate(${selectedIndex * 100}%)`,
-        width: `${width}%`
-    };
-};
+const getIndicatorStyle = (length, selectedIndex) => ({
+    ...styles.indicator,
+    transform: `translate(${selectedIndex * 100}%)`,
+    width: `${100 / length}%`
+});
 
 const Tabs = ({ children, selectedIndex = 0 }) => (
     <div style={styles.root}>
