@@ -11,6 +11,7 @@ const styles = {
         cursor: 'pointer',
         display: 'flex',
         flexBasis: '100%',
+        fontFamily: 'Roboto, sans-serif',
         justifyContent: 'center',
         textTransform: 'uppercase'
     }
@@ -18,7 +19,7 @@ const styles = {
 
 const getTabStyle = (isSelected) => ({
     color: isSelected ? COLOR_TEXT : `rgba(${[...convertHexColorToDex(COLOR_TEXT), 0.7].join(',')})`,
-    fontWeight: isSelected ? 'bold' : 'normal',
+    fontSize: '14px',
     marginTop: 1,
 });
 

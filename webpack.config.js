@@ -6,7 +6,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const PROD = JSON.parse(process.env.PROD_ENV || '0');
 
 const links = [
-    'https://fonts.googleapis.com/css?family=Lato:300',
+    'https://fonts.googleapis.com/css?family=Josefin+Slab:400|Roboto',
     `${PROD ? '' : '/'}css/styles.css`
 ];
 
