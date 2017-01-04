@@ -25,6 +25,8 @@
   "dependencies": {
     "inferno": "^1.0.3",
     "inferno-component": "^1.0.3",
-    "inferno-motion": "^0.5.0"
+    "inferno-motion": "^0.5.0",
+    "inferno-redux": "^1.0.6",
+    "redux": "^3.6.0"
   }
 }
