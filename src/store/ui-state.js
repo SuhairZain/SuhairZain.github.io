@@ -1,15 +1,5 @@
 const initialState = {
-    selectedTab: 0,
-    tabs: [{
-        _id: 0,
-        title: 'Home'
-    }, {
-        _id: 1,
-        title: 'Projects'
-    }, {
-        _id: 2,
-        title: 'Contact'
-    }]
+    selectedTab: 0
 };
 
 const SELECT_TAB = 'SELECT_TAB';

@@ -40,24 +40,20 @@ const styles = {
     }
 };
 
-const App = ({tabs, selectedIndex, onSelect}) => (
+const App = ({selectedIndex, onSelect}) => (
     <div style={styles.root}>
         <div style={styles.content}>
             <Tabs selectedIndex={selectedIndex} onSelect={onSelect}>
-                {
-                    tabs.map(({_id, title}) => (
-                        <Tab key={_id} id={_id} title={title}>{title}</Tab>
-                    ))
-                }
+                <Tab title="Home"><HomePage /></Tab>
+                <Tab title="Projects"><div>PROJ</div></Tab>
+                <Tab title="Contact"><div>CONT</div></Tab>
             </Tabs>
-            <HomePage />
         </div>
     </div>
 );
 
 const mapStateToProps = ({uiState}) => ({
-    tabs: uiState.tabs,
-    selectedIndex: uiState.tabs.map(tab => tab._id).indexOf(uiState.selectedTab)
+    selectedIndex: uiState.selectedTab
 });
 
 const mapDispatchToProps = (dispatch) => ({

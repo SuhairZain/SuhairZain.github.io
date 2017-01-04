@@ -8,6 +8,11 @@ import {
 
 const styles = {
     root: {
+        display: 'flex',
+        flexDirection: 'column',
+        height: '100%'
+    },
+    tabsAndIndicator: {
         backgroundColor: COLOR_TABS,
         display: 'flex',
         flexDirection: 'column'
@@ -32,27 +37,31 @@ const getTranslation = (selectedIndex) => selectedIndex * 100;
 
 const Tabs = ({ children, selectedIndex = 0, onSelect }) => (
     <div style={styles.root}>
-        <div style={styles.tabs}>
-            {
-                children.map((child, i) => (
-                    cloneVNode(
-                        child,
-                        {
-                            ...child.props,
-                            isSelected: selectedIndex === i,
-                            onSelect
-                        }
+        <div style={styles.tabsAndIndicator}>
+            <div style={styles.tabs}>
+                {
+                    children.map((child, i) => (
+                        cloneVNode(
+                            child,
+                            {
+                                ...child.props,
+                                id: i,
+                                isSelected: selectedIndex === i,
+                                onSelect
+                            }
+                        )
+                    ))
+                }
+            </div>
+            <Motion defaultStyle={{ x: 0 }} style={{ x: spring(getTranslation(selectedIndex)) }}>
+                {
+                    ({x}) => (
+                        <div style={getIndicatorStyle(children.length, x)}></div>
                     )
-                ))
-            }
+                }
+            </Motion>
         </div>
-        <Motion defaultStyle={{ x: 0 }} style={{ x: spring(getTranslation(selectedIndex)) }}>
-            {
-                ({x}) => (
-                    <div style={getIndicatorStyle(children.length, x)}></div>
-                )
-            }
-        </Motion>
+        {children[selectedIndex].props.children}
     </div>
 );
 

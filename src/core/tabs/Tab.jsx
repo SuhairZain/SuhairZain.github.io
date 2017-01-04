@@ -23,10 +23,10 @@ const getTabStyle = (isSelected) => ({
     marginTop: 1,
 });
 
-const Tab = ({ id, children, isSelected, onSelect }) => (
+const Tab = ({ id, isSelected, title, onSelect }) => (
     <div style={styles.root} onclick={() => onSelect(id)}>
         <span style={getTabStyle(isSelected)}>
-            {children}
+            {title}
         </span>
     </div >
 );
