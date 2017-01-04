@@ -11,7 +11,6 @@ let store = null;
 
 export const getStore = () => {
     if (store === null) {
-        console.error('STORE NULL');
         store = createStore(
             combineReducers({
                 uiState
