@@ -9,20 +9,16 @@ const styles = {
         width: '100%'
     },
     image: {
-        height: '100%',
-        objectFit: 'cover',
-        width: '35%'
+        objectFit: 'cover'
     },
     rightPane: {
         display: 'flex',
         flexDirection: 'column',
         fontSize: 'large',
-        height: '100%',
         lineHeight: '2.5em',
         overflowY: 'auto',
         padding: '0 24px',
-        textAlign: 'justify',
-        width: '65%'
+        textAlign: 'justify'
     },
     hi: {
         fontSize: 'x-large',
@@ -34,8 +30,8 @@ const styles = {
 };
 
 const HomePage = () => (
-    <div style={styles.root}>
-        <img style={styles.image} src='/images/me.jpg' />
+    <div style={styles.root} className="home-root">
+        <img style={styles.image} src='/images/me.jpg' className="home-image" />
         <div style={styles.rightPane}>
             <span style={styles.hi}>Hi there!</span>
             <span>I’m <span style={styles.name}>Suhair</span>,</span>

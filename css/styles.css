@@ -20,9 +20,37 @@ body {
     width: 100%;
 }
 
+.home-root {
+    flex-direction: column;
+}
+
+.home-image {
+    height: 40%;
+    width: 100%;
+}
+
+.home-text {
+    height: 60%;
+    width: 100%;
+}
+
 @media only screen and (min-width: 769px) {
     .root-content {
         height: 75%;
         width: 80%;
+    }
+
+    .home-root {
+        flex-direction: row;
+    }
+
+    .home-image {
+        height: 100%;
+        width: 35%;
+    }
+
+    .home-text {
+        height: 100%;
+        width: 65%;
     }
 }
