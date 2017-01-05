@@ -31,9 +31,7 @@ const styles = {
         boxShadow: `0px 0px 4px ${COLOR_SHADOW}`,
         display: 'flex',
         flexDirection: 'column',
-        height: '75%',
         overflow: 'hidden',
-        width: '80%'
     },
     title: {
         color: COLOR_TEXT
@@ -42,7 +40,7 @@ const styles = {
 
 const App = ({selectedIndex, onSelect}) => (
     <div style={styles.root}>
-        <div style={styles.content}>
+        <div style={styles.content} className="root-content">
             <Tabs selectedIndex={selectedIndex} onSelect={onSelect}>
                 <Tab title="Home"><HomePage /></Tab>
                 <Tab title="Projects"><div>PROJ</div></Tab>

@@ -14,3 +14,15 @@ body {
 body {
     font-family: 'Josefin Slab', sans-serif;
 }
+
+.root-content {
+    height: 100%;
+    width: 100%;
+}
+
+@media only screen and (min-width: 769px) {
+    .root-content {
+        height: 75%;
+        width: 80%;
+    }
+}
