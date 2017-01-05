@@ -12,6 +12,7 @@ import {
     COLOR_TEXT
 } from './utils/colors.js'
 
+import ContactPage from './contact/ContactPage.jsx'
 import HomePage from './home/HomePage.jsx'
 import Tab from './core/tabs/Tab.jsx'
 import Tabs from './core/tabs/Tabs.jsx'
@@ -44,7 +45,7 @@ const App = ({selectedIndex, onSelect}) => (
             <Tabs selectedIndex={selectedIndex} onSelect={onSelect}>
                 <Tab title="Home"><HomePage /></Tab>
                 <Tab title="Projects"><div>PROJ</div></Tab>
-                <Tab title="Contact"><div>CONT</div></Tab>
+                <Tab title="Contact"><ContactPage /></Tab>
             </Tabs>
         </div>
     </div>
