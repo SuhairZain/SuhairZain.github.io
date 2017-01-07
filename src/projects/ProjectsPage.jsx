@@ -22,24 +22,21 @@ const styles = {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        padding: '12px 0px 12px 12px',
-        width: '40%'
+        padding: '12px 0px 12px 12px'
     },
     list: {
         display: 'flex',
         flexDirection: 'column',
-        height: '100%',
-        overflowX: 'auto',
-        width: '60%'
+        overflowX: 'auto'
     }
 };
 
 const ProjectsPage = ({ selectedProject, onSelectProject }) => (
-    <div style={styles.root}>
-        <div style={styles.info}>
+    <div className="projects-root" style={styles.root}>
+        <div className="projects-image" style={styles.info}>
             <ProjectDetails project={projects.filter(({id}) => id === selectedProject)[0]} />
         </div>
-        <div style={styles.list}>
+        <div className="projects-list" style={styles.list}>
             <div>
                 {
                     projects.map(({id, description, keywords, license, name, source, url}) => (
