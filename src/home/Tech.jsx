@@ -4,12 +4,9 @@ import {
     COLOR_TEXT_IMPORTANT
 } from '../utils/colors'
 
-import Hover from '../core/Hover.jsx'
-
 const styles = {
     default: {
         color: COLOR_TEXT_IMPORTANT,
-        cursor: 'pointer',
         fontSize: 'xx-large'
     },
     hover: {
@@ -19,14 +16,11 @@ const styles = {
 };
 
 const Tech = ({children}) => (
-    <Hover
-        defaultStyle={styles.default}
-        hoverStyle={styles.hover}>
-        <span
-            title={`Show my projects made in ${children}`}>
-            {children}
-        </span>
-    </Hover>
+    <span
+        style={styles.default}
+        title={`Show my projects made in ${children}`}>
+        {children}
+    </span>
 );
 
 export default Tech;
