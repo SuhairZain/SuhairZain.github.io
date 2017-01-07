@@ -14,6 +14,7 @@ import {
 
 import ContactPage from './contact/ContactPage.jsx'
 import HomePage from './home/HomePage.jsx'
+import ProjectPage from './projects/ProjectsPage.jsx'
 import Tab from './core/tabs/Tab.jsx'
 import Tabs from './core/tabs/Tabs.jsx'
 
@@ -43,9 +44,9 @@ const App = ({selectedIndex, onSelect}) => (
     <div style={styles.root}>
         <div style={styles.content} className="root-content">
             <Tabs selectedIndex={selectedIndex} onSelect={onSelect}>
-                <Tab title="Home"><HomePage /></Tab>
-                <Tab title="Projects"><div>PROJ</div></Tab>
-                <Tab title="Contact"><ContactPage /></Tab>
+                <Tab key="home" title="Home"><HomePage /></Tab>
+                <Tab key="projects" title="Projects"><ProjectPage /></Tab>
+                <Tab key="contact" title="Contact"><ContactPage /></Tab>
             </Tabs>
         </div>
     </div>
