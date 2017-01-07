@@ -19,6 +19,7 @@
     "babel-preset-stage-1": "^6.16.0",
     "html-webpack-plugin": "^2.24.1",
     "inferno-create-class": "^1.0.5",
+    "json-loader": "^0.5.4",
     "webpack": "^1.14.0",
     "webpack-dev-server": "^1.16.2"
   },
