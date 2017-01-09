@@ -12,7 +12,7 @@ body {
 }
 
 body {
-    font-family: 'Josefin Slab', sans-serif;
+    font-family: 'Josefin Slab', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 
 .root-content {
@@ -24,8 +24,13 @@ body {
     flex-direction: column;
 }
 
-.home-image {
+.home-image-wrapper {
     height: 40%;
+    overflow: hidden;
+    width: 100%;
+}
+
+.home-image {
     width: 100%;
 }
 
@@ -56,9 +61,13 @@ body {
     .home-root {
         flex-direction: row;
     }
-    .home-image {
+    .home-image-wrapper {
         height: 100%;
         width: 35%;
+    }
+    .home-image {
+        height: 100%;
+        width: 100%;
     }
     .home-text {
         height: 100%;

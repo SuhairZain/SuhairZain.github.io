@@ -17,25 +17,30 @@ const styles = {
         fontSize: 'large',
         lineHeight: '2.5em',
         overflowY: 'auto',
-        padding: '0 24px',
         textAlign: 'justify'
     },
     hi: {
         fontSize: 'x-large',
-        margin: '24px 0 0'
+        margin: '24px 24px 0'
     },
     name: {
-        fontSize: 'xx-large'
+        fontSize: 'xx-large',
+        margin: '0px 24px'
+    },
+    text: {
+        margin: '0px 24px'
     }
 };
 
 const HomePage = () => (
     <div style={styles.root} className="home-root">
-        <img style={styles.image} src='/images/me.jpg' className="home-image" />
-        <div style={styles.rightPane}>
+        <div className="home-image-wrapper">
+            <img style={styles.image} className="home-image" src='/images/me.jpg' />
+        </div>
+        <div style={styles.rightPane} className="home-text">
             <span style={styles.hi}>Hi there!</span>
-            <span>I’m <span style={styles.name}>Suhair</span>,</span>
-            <span>
+            <span style={styles.text}>I’m <span style={styles.name}>Suhair</span>,</span>
+            <span style={styles.text}>
                 a coder who fell in love with the component based declarative UI of&nbsp;
                 <Tech>React</Tech> and <Tech>Inferno</Tech>
                 &nbsp;and uses tools like <Tech>Redux</Tech> and <Tech>Rollup</Tech>
