@@ -79,7 +79,7 @@ const ContactPage = ({ prop }) => (
                 <FooterLink link="https://github.com/infernojs/inferno" text="InfernoJS" /> using&nbsp;
                 <FooterLink link="https://github.com/reactjs/redux" text="Redux" />,&nbsp;
                 <FooterLink link="https://github.com/infernojs/inferno-motion" text="inferno-motion" />,&nbsp;
-                <FooterLink link="https://github.com/rollup/rollup" text="Rollup" /> and&nbsp;
+                <FooterLink link="https://github.com/webpack/webpack" text="Webpack" /> and&nbsp;
                 <FooterLink link="https://github.com/babel/babel" text="Babel" />.
                 Hosted and Source code available at&nbsp;
                 <FooterLink link="https://github.com/SuhairZain/SuhairZain.github.io" text="GitHub" />.

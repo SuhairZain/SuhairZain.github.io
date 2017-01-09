@@ -135,7 +135,7 @@
     "image": "/images/projects/google.jpg"
 }, {
     "description": "This webpage, created using Inferno",
-    "keywords": ["Inferno", "Redux", "Rollup", "JavaScript"],
+    "keywords": ["Inferno", "Redux", "Webpack", "JavaScript"],
     "name": "Personal SPA Website",
     "id": 1150,
     "license": "MIT",
