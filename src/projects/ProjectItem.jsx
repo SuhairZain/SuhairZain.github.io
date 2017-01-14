@@ -9,14 +9,17 @@ import {
 import Hover from '../core/Hover.jsx'
 
 const styles = {
-    root: {
+    root: (isSelected) => ({
         borderRadius: 4,
-        boxShadow: `0px 0px 4px ${COLOR_SHADOW}`,
+        boxShadow: `0px 0px ${isSelected ? '8px' : '4px'} ${COLOR_SHADOW}`,
         cursor: 'pointer',
         display: 'flex',
         flexDirection: 'column',
         margin: 12,
         padding: '12px 8px 4px'
+    }),
+    rootHover: {
+        boxShadow: `0px 0px 8px ${COLOR_SHADOW}`
     },
     nameAndLicense: {
         display: 'flex'
@@ -48,32 +51,34 @@ const styles = {
     }
 };
 
-const name = ({ id, description, keywords, license, name, source, url, onSelect }) => (
-    <div style={styles.root} onclick={() => { onSelect(id); } }>
-        <div style={styles.nameAndLicense}>
-            {
-                url ?
-                    <Hover defaultStyle={styles.nameDefault} hoverStyle={styles.hoverStyle}>
-                        <a href={url} target="_blank">
-                            <span title="Open the project">{name}</span>
-                        </a>
-                    </Hover> :
-                    <span style={styles.nameDefault}>{name}</span>
-            }
+const name = ({ id, description, isSelected, keywords, license, name, source, url, onSelect }) => (
+    <Hover defaultStyle={styles.root(isSelected)} hoverStyle={styles.rootHover}>
+        <div onclick={() => { onSelect(id); } }>
+            <div style={styles.nameAndLicense}>
+                {
+                    url ?
+                        <Hover defaultStyle={styles.nameDefault} hoverStyle={styles.hoverStyle}>
+                            <a href={url} target="_blank">
+                                <span title="Open the project">{name}</span>
+                            </a>
+                        </Hover> :
+                        <span style={styles.nameDefault}>{name}</span>
+                }
 
-            {
-                license ?
-                    <Hover defaultStyle={styles.licenseDefault} hoverStyle={styles.hoverStyle}>
-                        <a href={source} target="_blank">
-                            <span title="View Source Code" style={styles.license}>{license}</span>
-                        </a>
-                    </Hover> :
-                    <span />
-            }
+                {
+                    license ?
+                        <Hover defaultStyle={styles.licenseDefault} hoverStyle={styles.hoverStyle}>
+                            <a href={source} target="_blank">
+                                <span title="View Source Code" style={styles.license}>{license}</span>
+                            </a>
+                        </Hover> :
+                        <span />
+                }
+            </div>
+            <span style={styles.description}>{description}</span>
+            <span style={styles.keywords}>{keywords.join(', ')}</span>
         </div>
-        <span style={styles.description}>{description}</span>
-        <span style={styles.keywords}>{keywords.join(', ')}</span>
-    </div>
+    </Hover>
 );
 
 export default name;

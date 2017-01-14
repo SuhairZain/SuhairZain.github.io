@@ -44,6 +44,7 @@ const ProjectsPage = ({ selectedProject, onSelectProject }) => (
                             key={id}
                             id={id}
                             description={description}
+                            isSelected={id === selectedProject}
                             keywords={keywords}
                             license={license}
                             name={name}
