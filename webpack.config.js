@@ -2,6 +2,7 @@ const fs = require('fs');
 
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin');
 
 const PROD = JSON.parse(process.env.PROD_ENV || '0');
 
@@ -13,7 +14,11 @@ const links = [
 const plugins = [
     new HtmlWebpackPlugin({
         filename: '../index.html',
+        inlineSource: PROD ? '.(js|css)$' : '',
         links: links,
+        minify: {
+            collapseWhitespace: true
+        },
         template: 'index-file-template.ejs',
         title: "Suhair Zain's personal page"
     })
@@ -22,10 +27,7 @@ const plugins = [
 const outputDir = 'dist';
 
 if (PROD) {
-    fs.readdirSync(`./${outputDir}`).forEach((filename) => {
-        fs.unlinkSync(`./${outputDir}/${filename}`);
-    });
-
+    plugins.push(new HtmlWebpackInlineSourcePlugin());
     plugins.push(
         new webpack.optimize.UglifyJsPlugin({
             compress: {
