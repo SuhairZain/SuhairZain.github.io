@@ -1,14 +1,14 @@
 const fs = require('fs');
 
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 
 const PROD = JSON.parse(process.env.PROD_ENV || '0');
 
 const links = [
-    'https://fonts.googleapis.com/css?family=Josefin+Slab:400|Roboto',
-    `${PROD ? '' : '/'}css/styles.css`
+    'https://fonts.googleapis.com/css?family=Josefin+Slab:400|Roboto'
 ];
 
 const plugins = [
@@ -21,10 +21,9 @@ const plugins = [
         },
         template: 'index-file-template.ejs',
         title: "Suhair Zain's personal page"
-    })
+    }),
+    new ExtractTextPlugin("dist/styles.css")
 ];
-
-const outputDir = 'dist';
 
 if (PROD) {
     plugins.push(new HtmlWebpackInlineSourcePlugin());
@@ -65,6 +64,9 @@ module.exports = {
             test: /\.jsx?$/,
             loader: 'babel-loader',
             exclude: /node_modules/
+        }, {
+            test: /\.css$/,
+            loader: ExtractTextPlugin.extract("style-loader", "css-loader")
         }]
     },
     plugins: plugins

@@ -5,6 +5,8 @@ import { getStore } from './store/store'
 
 import App from './App.jsx'
 
+import '../css/styles.css'
+
 Inferno.render(
     <Provider store={getStore()}>
         <App />
