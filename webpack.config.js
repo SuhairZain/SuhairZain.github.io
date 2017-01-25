@@ -11,6 +11,14 @@ const links = [
     'https://fonts.googleapis.com/css?family=Josefin+Slab:400|Roboto'
 ];
 
+const polyfills = [
+    'Promise',
+    'Map',
+    'WeakMap',
+    'Object.keys',
+    'Object.assign'
+];
+
 const plugins = [
     new HtmlWebpackPlugin({
         filename: '../index.html',
@@ -19,6 +27,7 @@ const plugins = [
         minify: {
             collapseWhitespace: true
         },
+        polyfills: polyfills.join(','),
         template: 'index-file-template.ejs',
         title: "Suhair Zain's personal page"
     }),
