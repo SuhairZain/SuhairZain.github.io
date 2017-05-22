@@ -1,5 +1,5 @@
 # About
-My personal portfolio website, created using [InfernoJS](https://github.com/infernojs/inferno). Testing support sponsered by [BrowserStack](http://browserstack.com/).
+My personal portfolio website, created using [InfernoJS](https://github.com/infernojs/inferno). Testing support sponsored by [BrowserStack](http://browserstack.com/).
 
 <img src="images/browserstack.jpg" height=50 alt="Sponsored by BrowserStack"/>
 
