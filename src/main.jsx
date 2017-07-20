@@ -1,15 +1,8 @@
-import Inferno from 'inferno'
-import { Provider } from 'inferno-redux'
+import React from 'react';
+import { render } from 'react-dom';
 
-import { getStore } from './store/store'
+import App from './App.jsx';
 
-import App from './App.jsx'
+import '../css/styles.css';
 
-import '../css/styles.css'
-
-Inferno.render(
-    <Provider store={getStore()}>
-        <App />
-    </Provider>,
-    document.getElementById('root')
-);
+render(<App />, document.getElementById('root'));

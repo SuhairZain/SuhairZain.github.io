@@ -1,68 +1,50 @@
-import Inferno from 'inferno'
-import { connect } from 'inferno-redux'
+import React from 'react';
 
-import {
-    createSelectTab
-} from './store/ui-state'
-
-import {
-    COLOR_BG_START,
-    COLOR_BG_END,
-    COLOR_SHADOW,
-    COLOR_TEXT
-} from './utils/colors.js'
-
-import ContactPage from './contact/ContactPage.jsx'
-import HomePage from './home/HomePage.jsx'
-import ProjectPage from './projects/ProjectsPage.jsx'
-import Tab from './core/tabs/Tab.jsx'
-import Tabs from './core/tabs/Tabs.jsx'
-
-const styles = {
-    root: {
-        alignItems: 'center',
-        background: `linear-gradient(to bottom right, ${COLOR_BG_START}, ${COLOR_BG_END})`,
-        display: 'flex',
-        height: '100%',
-        justifyContent: 'center',
-        width: '100%'
-    },
-    content: {
-        backgroundColor: 'white',
-        borderRadius: 4,
-        boxShadow: `0px 0px 4px ${COLOR_SHADOW}`,
-        display: 'flex',
-        flexDirection: 'column',
-        overflow: 'hidden',
-    },
-    title: {
-        color: COLOR_TEXT
-    }
+const headerLinkStyle = {
+  fontWeight: 100,
+  marginBottom: 0,
+  marginTop: 48,
 };
 
-const App = ({selectedIndex, onSelect}) => (
-    <div style={styles.root}>
-        <div style={styles.content} className="root-content">
-            <Tabs selectedIndex={selectedIndex} onSelect={onSelect}>
-                <Tab key="home" title="Home"><HomePage /></Tab>
-                <Tab key="projects" title="Projects"><ProjectPage /></Tab>
-                <Tab key="contact" title="Contact"><ContactPage /></Tab>
-            </Tabs>
-        </div>
+const styles = {
+  root: {
+    backgroundSize: 'cover',
+    display: 'flex',
+    height: '100%',
+    justifyContent: 'space-between',
+    width: '100%',
+  },
+  name: {
+    fontWeight: 400,
+    marginLeft: 48,
+    padding: 0,
+    marginTop: 48,
+  },
+  links: {
+    display: 'flex',
+  },
+  about: {
+    ...headerLinkStyle,
+    marginRight: 64,
+  },
+  projects: {
+    ...headerLinkStyle,
+    marginRight: 64,
+  },
+  contact: {
+    ...headerLinkStyle,
+    marginRight: 48,
+  },
+};
+
+const App = () =>
+  <div style={styles.root}>
+    <h1 style={styles.name}>Suhair Zain</h1>
+    <div style={styles.links}>
+      <h3 style={styles.about}>About</h3>
+      <h3 style={styles.projects}>Projects</h3>
+      <h3 style={styles.contact}>Contact</h3>
     </div>
-);
+  </div>;
 
-const mapStateToProps = ({uiState}) => ({
-    selectedIndex: uiState.selectedTab
-});
-
-const mapDispatchToProps = (dispatch) => ({
-    onSelect: (id) => {
-        dispatch(createSelectTab(id));
-    }
-});
-
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(App);
+export default App;
