@@ -21,8 +21,5 @@ module.exports = {
     'require-jsdoc': 0,
     'object-curly-spacing': 0,
     'space-before-function-paren': 0
-  },
-  globals: {
-    require: true
   }
 };
