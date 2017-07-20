@@ -1,15 +1,13 @@
 /* global process require module */
 
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin');
+const HtmlWPInlineSourcePlugin = require('html-webpack-inline-source-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 
 const PROD = JSON.parse(process.env.PROD_ENV || '0');
 
-const links = [
-  'https://fonts.googleapis.com/css?family=Josefin+Slab:400|Roboto',
-];
+const links = ['https://fonts.googleapis.com/css?family=Lato:400+100'];
 
 const polyfills = ['Promise', 'Map', 'WeakMap', 'Object.keys', 'Object.assign'];
 
@@ -29,7 +27,7 @@ const plugins = [
 ];
 
 if (PROD) {
-  plugins.push(new HtmlWebpackInlineSourcePlugin());
+  plugins.push(new HtmlWPInlineSourcePlugin());
   plugins.push(
     new webpack.optimize.UglifyJsPlugin({
       compress: {
