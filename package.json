@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint . --cache --fix --ext .jsx,.js || true",
     "dev": "webpack",
     "serve": "webpack-dev-server --inline",
     "prod": "cross-env PROD_ENV=1 webpack"
@@ -12,6 +13,7 @@
   "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.21.0",
+    "babel-eslint": "^7.2.3",
     "babel-loader": "^6.2.10",
     "babel-plugin-inferno": "^1.4.0",
     "babel-plugin-syntax-jsx": "^6.18.0",
@@ -19,6 +21,10 @@
     "babel-preset-stage-1": "^6.16.0",
     "cross-env": "^3.1.4",
     "css-loader": "^0.26.1",
+    "eslint": "^4.2.0",
+    "eslint-config-google": "^0.9.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-react": "^7.1.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "html-webpack-inline-source-plugin": "^0.0.6",
     "html-webpack-plugin": "^2.24.1",
