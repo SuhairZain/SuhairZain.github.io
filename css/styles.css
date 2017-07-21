@@ -6,14 +6,50 @@ body {
   width: 100%;
 }
 
-#root {
+#background {
   background: url('/images/bg.jpg') no-repeat center center fixed;
   background-size: cover;
-  height: 100%;
-  width: 100%;
+  filter: blur(2px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+#root {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 100;
 }
 
 body {
   font-family: 'Lato', 'Helvetica Neue', -apple-system, BlinkMacSystemFont,
     'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
+}
+
+.header-item {
+  color: #999;
+  font-weight: 100;
+  margin-bottom: 0px;
+  margin-top: 48px;
+  transition: color 0.5s ease-out;
+}
+
+.header-item-selected {
+  transition: none;
+  color: #000;
+}
+
+.header-item:hover {
+  color: #000;
+  cursor: pointer;
+}
+
+.header-item-selected:hover {
+  cursor: default;
 }

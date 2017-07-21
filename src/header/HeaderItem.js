@@ -3,17 +3,16 @@ import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
 
-import { createChangePage } from '../redux/ui';
+import classNames from 'classnames';
 
-import { Black, DarkGray } from '../utils/colors';
+import { createChangePage } from '../redux/ui';
 
 const HeaderItem = ({ index, isSelected, text, style, onSelect }) =>
   <h3
-    style={{
-      ...styles.text,
-      ...(isSelected ? styles.selectedText : {}),
-      ...style,
-    }}
+    className={classNames('header-item', {
+      'header-item-selected': isSelected,
+    })}
+    style={style}
     onClick={() => onSelect(index)}
   >
     {text}
@@ -25,18 +24,6 @@ HeaderItem.propTypes = {
   text: PropTypes.string.isRequired,
   style: PropTypes.object,
   onSelect: PropTypes.func.isRequired,
-};
-
-const styles = {
-  text: {
-    color: DarkGray,
-    fontWeight: 100,
-    marginBottom: 0,
-    marginTop: 48,
-  },
-  selectedText: {
-    color: Black,
-  },
 };
 
 const mapStateToProps = ({ ui }, { index }) => ({
