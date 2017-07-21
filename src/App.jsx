@@ -1,10 +1,12 @@
 import React from 'react';
 
-const headerLinkStyle = {
-  fontWeight: 100,
-  marginBottom: 0,
-  marginTop: 48,
-};
+import Header from './header/Header';
+
+const App = () =>
+  <div style={styles.root}>
+    <h1 style={styles.name}>Suhair Zain</h1>
+    <Header />
+  </div>;
 
 const styles = {
   root: {
@@ -20,31 +22,6 @@ const styles = {
     padding: 0,
     marginTop: 48,
   },
-  links: {
-    display: 'flex',
-  },
-  about: {
-    ...headerLinkStyle,
-    marginRight: 64,
-  },
-  projects: {
-    ...headerLinkStyle,
-    marginRight: 64,
-  },
-  contact: {
-    ...headerLinkStyle,
-    marginRight: 48,
-  },
 };
-
-const App = () =>
-  <div style={styles.root}>
-    <h1 style={styles.name}>Suhair Zain</h1>
-    <div style={styles.links}>
-      <h3 style={styles.about}>About</h3>
-      <h3 style={styles.projects}>Projects</h3>
-      <h3 style={styles.contact}>Contact</h3>
-    </div>
-  </div>;
 
 export default App;
