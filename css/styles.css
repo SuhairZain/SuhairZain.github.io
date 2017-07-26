@@ -7,9 +7,15 @@ body {
 }
 
 #background {
-  background: url('/images/bg.jpg') no-repeat center center fixed;
+  background-attachment: fixed;
+  background-image: linear-gradient(
+      rgba(235, 1, 165, 0.5),
+      rgba(209, 53, 49, 0.5)
+    ),
+    url('/images/bg.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
-  filter: blur(2px);
   position: fixed;
   top: 0;
   left: 0;
@@ -66,12 +72,15 @@ body {
 }
 
 .header-item {
-  color: #000;
+  color: #fff;
   font-weight: 100;
-  margin-bottom: 0px;
-  margin-top: 0px;
+  margin: 0 64px 0 0;
   transition: opacity 0.5s ease-out;
   opacity: 0.4;
+}
+
+.header-item:last-child {
+  margin-right: 0;
 }
 
 .header-item-selected {

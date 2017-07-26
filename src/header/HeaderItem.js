@@ -7,12 +7,11 @@ import classNames from 'classnames';
 
 import { createChangePage } from '../redux/ui';
 
-const HeaderItem = ({ index, isSelected, text, style, onSelect }) =>
+const HeaderItem = ({ index, isSelected, text, onSelect }) =>
   <h3
     className={classNames('header-item', {
       'header-item-selected': isSelected,
     })}
-    style={style}
     onClick={() => onSelect(index)}
   >
     {text}
@@ -22,7 +21,6 @@ HeaderItem.propTypes = {
   index: PropTypes.number.isRequired,
   isSelected: PropTypes.bool.isRequired,
   text: PropTypes.string.isRequired,
-  style: PropTypes.object,
   onSelect: PropTypes.func.isRequired,
 };
 
