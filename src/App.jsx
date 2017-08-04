@@ -31,6 +31,8 @@ const App = ({ selectedPage }) =>
     </div>
   </div>;
 
+/* <div key={i} style={{ border: '1px solid', height: style.h }} />*/
+
 App.propTypes = {
   selectedPage: PropTypes.number.isRequired,
 };
