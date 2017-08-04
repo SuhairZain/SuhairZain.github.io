@@ -40,9 +40,10 @@ body {
 
 .name {
   font-weight: 400;
+  margin-bottom: 0;
   margin-left: 24px;
-  padding: 0;
   margin-top: 24px;
+  padding: 0;
 }
 
 @media screen and (min-width: 768px) {
@@ -95,4 +96,15 @@ body {
 
 .header-item-selected:hover {
   cursor: default;
+}
+
+.content {
+  flex: 1;
+  padding: 24px;
+}
+
+@media screen and (min-width: 768px) {
+  .content {
+    padding: 48px;
+  }
 }
