@@ -1,8 +1,0 @@
-# Node
-node_modules/*
-
-# Test files
-__tests__
-
-# Build files
-dist/*
