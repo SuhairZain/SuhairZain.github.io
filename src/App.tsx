@@ -16,6 +16,7 @@ class App extends PureComponent {
           </a>
         </header>
         <footer className="App-footer"></footer>
+        <footer className="App-footer Slanted"></footer>
       </div>
     );
   }

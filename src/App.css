@@ -19,7 +19,6 @@
   font-size: calc(10px + 1vmin);
   color: white;
   flex: 1;
-  margin-bottom: 5vh;
 }
 
 .App-header::before {
@@ -33,11 +32,16 @@
 
 .App-footer {
   background-color: inherit;
-  transform-origin: left;
-  transform: rotate(-5deg) translateX(0px);
-  height: 10vh;
+  height: 5vh;
+  width: 100vw;
+}
+
+.App-footer.Slanted {
+  transform-origin: left top;
+  transform: rotate(-5deg);
+  height: 30vh;
   width: 110vw;
-  position: absolute;
-  bottom: -5vh;
+  position: fixed;
+  bottom: -25vh;
   right: -10vw;
 }
