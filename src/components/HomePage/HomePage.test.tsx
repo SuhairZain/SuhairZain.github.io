@@ -15,10 +15,8 @@ describe('HomePage', () => {
 
         const developer = getByText('developer');
         expect(developer).toBeInTheDocument();
-        expect(developer.tagName).toBe('A');
 
         const photographer = getByText('photographer');
         expect(photographer).toBeInTheDocument();
-        expect(photographer.tagName).toBe('A');
     });
 });
