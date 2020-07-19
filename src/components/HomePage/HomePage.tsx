@@ -55,7 +55,7 @@ class HomePage extends PureComponent<{}, State> {
                             developing mobile apps and websites. Have run my own
                             startup and worked as a full stack and front-end
                             developer. Open to learning new languages and
-                            frameworks because you never know where my our
+                            frameworks because you never know where our next
                             favorite will come from. Looking for new
                             opportunities to learn and improve self.
                         </span>
