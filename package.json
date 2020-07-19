@@ -23,7 +23,8 @@
         "eject": "react-scripts eject",
         "predeploy": "npm run build",
         "deploy": "gh-pages -b master -d build",
-        "prettify": "yarn prettier --write ."
+        "prettify": "yarn prettier --write .",
+        "postversion": "git push && git branch -f master develop && git checkout master && yarn deploy && git checkout develop"
     },
     "husky": {
         "hooks": {
