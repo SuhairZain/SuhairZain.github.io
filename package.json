@@ -24,7 +24,7 @@
         "predeploy": "npm run build",
         "deploy": "gh-pages -b master -d build",
         "prettify": "yarn prettier --write .",
-        "postversion": "git push && git branch -f master develop && git checkout master && yarn deploy && git branch -d master"
+        "postversion": "git push && git branch -f master develop && git checkout master && yarn deploy && git checkout deploy && git branch -d master"
     },
     "husky": {
         "hooks": {
