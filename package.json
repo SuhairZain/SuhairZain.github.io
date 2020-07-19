@@ -22,7 +22,13 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -b master -d build"
+    "deploy": "gh-pages -b master -d build",
+    "prettify": "yarn prettier --write src/**"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn prettier --check src/**"
+    }
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -41,6 +47,7 @@
   },
   "devDependencies": {
     "gh-pages": "2.2.0",
+    "husky": "4.2.5",
     "prettier": "1.19.1"
   }
 }
